@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58F63C363A4A7EECAB331F50 /* Pods_FortuneSpin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B29D95E04FD2F010B519A59 /* Pods_FortuneSpin.framework */; };
 		FB76A37724E592CE00D54F35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76A37624E592CE00D54F35 /* AppDelegate.swift */; };
 		FB76A37924E592CE00D54F35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76A37824E592CE00D54F35 /* SceneDelegate.swift */; };
 		FB76A37B24E592CE00D54F35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76A37A24E592CE00D54F35 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B29D95E04FD2F010B519A59 /* Pods_FortuneSpin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FortuneSpin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		765F3DA97B523DE8086E9839 /* Pods-FortuneSpin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneSpin.release.xcconfig"; path = "Target Support Files/Pods-FortuneSpin/Pods-FortuneSpin.release.xcconfig"; sourceTree = "<group>"; };
+		7D0637ABFF2260E5BBBB00A7 /* Pods-FortuneSpin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneSpin.debug.xcconfig"; path = "Target Support Files/Pods-FortuneSpin/Pods-FortuneSpin.debug.xcconfig"; sourceTree = "<group>"; };
 		FB76A37324E592CE00D54F35 /* FortuneSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB76A37624E592CE00D54F35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB76A37824E592CE00D54F35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F63C363A4A7EECAB331F50 /* Pods_FortuneSpin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B625987CFD05ED689AF9B364 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D0637ABFF2260E5BBBB00A7 /* Pods-FortuneSpin.debug.xcconfig */,
+				765F3DA97B523DE8086E9839 /* Pods-FortuneSpin.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E3639C4498A05AC0D11232EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B29D95E04FD2F010B519A59 /* Pods_FortuneSpin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB76A36A24E592CE00D54F35 = {
 			isa = PBXGroup;
 			children = (
 				FB76A37524E592CE00D54F35 /* FortuneSpin */,
 				FB76A37424E592CE00D54F35 /* Products */,
+				B625987CFD05ED689AF9B364 /* Pods */,
+				E3639C4498A05AC0D11232EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB76A38724E592D000D54F35 /* Build configuration list for PBXNativeTarget "FortuneSpin" */;
 			buildPhases = (
+				2FEF01A88EC7D7736E3A728B /* [CP] Check Pods Manifest.lock */,
 				FB76A36F24E592CE00D54F35 /* Sources */,
 				FB76A37024E592CE00D54F35 /* Frameworks */,
 				FB76A37124E592CE00D54F35 /* Resources */,
+				603D615F9909C4B0FDF6BBAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FEF01A88EC7D7736E3A728B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FortuneSpin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		603D615F9909C4B0FDF6BBAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FortuneSpin/Pods-FortuneSpin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FortuneSpin/Pods-FortuneSpin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FortuneSpin/Pods-FortuneSpin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB76A36F24E592CE00D54F35 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		FB76A38824E592D000D54F35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D0637ABFF2260E5BBBB00A7 /* Pods-FortuneSpin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		FB76A38924E592D000D54F35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 765F3DA97B523DE8086E9839 /* Pods-FortuneSpin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
