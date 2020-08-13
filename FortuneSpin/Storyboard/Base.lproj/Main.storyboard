@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FortuneSpin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-lZ-IQ8" customClass="SpinWheelControl" customModule="SpinWheelControl">
+                                <rect key="frame" x="57" y="194" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gBX-sI-s9n"/>
+                                    <constraint firstAttribute="height" constant="300" id="osK-WZ-W46"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVW-da-1Hh" customClass="SmoothButton" customModule="SmoothButton">
+                                <rect key="frame" x="168" y="544" width="78.5" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vdh-rA-uJ6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Spin"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressSpin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guf-wd-Gn0"/>
+                                </connections>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinImage" translatesAutoresizingMaskIntoConstraints="NO" id="e6k-FX-Jdj">
+                                <rect key="frame" x="187" y="164" width="40" height="40"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18039215689999999" green="0.1843137255" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Bdd-lZ-IQ8" firstAttribute="top" secondItem="e6k-FX-Jdj" secondAttribute="bottom" constant="-10" id="DRL-86-9DV"/>
+                            <constraint firstItem="Bdd-lZ-IQ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Veh-Ia-e02"/>
+                            <constraint firstItem="e6k-FX-Jdj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WD2-lz-jno"/>
+                            <constraint firstItem="qVW-da-1Hh" firstAttribute="top" secondItem="Bdd-lZ-IQ8" secondAttribute="bottom" constant="50" id="Xpe-SU-SXW"/>
+                            <constraint firstItem="Bdd-lZ-IQ8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="czL-6w-WEO"/>
+                            <constraint firstItem="qVW-da-1Hh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xIA-PG-eAY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="spinWheelControl" destination="Bdd-lZ-IQ8" id="ejX-GS-24U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pinImage" width="40" height="40"/>
+    </resources>
+</document>
